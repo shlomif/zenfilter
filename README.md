@@ -8,7 +8,7 @@ contexts where there is a limit to the amount of kept output.
 
 All arguments are optional:
 
-* `--count-step=n`: displays `COUNT &lt;tab&gt; <step>` every n lines.
+* `--count-step=n`: displays `COUNT <tab> <step>` every n lines.
 * `--last=n`: displays the last n lines prefixed with "LAST\t"
 * `--filter=<regex pattern>`: displays matching lines with a "FOUND\t" prefix.
 
