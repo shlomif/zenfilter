@@ -29,11 +29,11 @@ def zenfilter():
         if args.count_step and index % args.count_step == 0:
             # Line counter
             print("COUNT\t{}".format(index))
-        
+
         if args.filter and re.search('(%s)' % args.filter, line):
             # Regex match. Print the line with the "FOUND" prefix.
             print("FOUND\t{}".format(line), end="")
-    
+
     # Now we print the last lines queue
     for line in lastlines:
         print("LAST\t{}".format(line), end="")
