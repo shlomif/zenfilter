@@ -1,10 +1,11 @@
 from setuptools import setup
 
-setup(name='zenfilter',
-        version='0.1a',
+setup(
+        name='zenfilter',
+        version='0.2.0',
         description='Filters TravisCI output',
-        author='Trashlord',
-        author_email='dornenreich666@gmail.com',
+        author='Shlomi Fish',
+        author_email='shlomif@shlomifish.org',
         license='MIT',
         keywords='travisci',
         classifiers=[
@@ -17,6 +18,4 @@ setup(name='zenfilter',
                 'zenfilter = zenfilter:zenfilter',
                 ],
             },
-        )
-
-
+)
