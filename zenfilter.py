@@ -8,6 +8,7 @@ import sys
 import argparse
 import re
 
+
 def getArgs():
     parser = argparse.ArgumentParser()
     parser.add_argument("--count-step", type=int)
@@ -15,8 +16,9 @@ def getArgs():
     parser.add_argument("--filter")
     return parser.parse_args()
 
+
 def zenfilter():
-    args = getArgs();
+    args = getArgs()
     lastlines = []
     for index, line in enumerate(sys.stdin):
         if args.last:
@@ -37,6 +39,7 @@ def zenfilter():
     # Now we print the last lines queue
     for line in lastlines:
         print("LAST\t{}".format(line), end="")
+
 
 if __name__ == "__main__":
     zenfilter()
