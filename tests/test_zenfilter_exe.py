@@ -31,3 +31,8 @@ def test_modint():
         b'4 foo\n5 spam\n6 pink\n',
         b'FOUND\t1 my pattern\nFOUND\t3 my patently obvious\nLAST\t6 pink\n',
         'test --filter')
+    _test_input_output(
+        ['--count', '10'],
+        b''.join(bytes(str(i+1) + '\n', 'utf-8') for i in range(35)),
+        b'COUNT\t0\nCOUNT\t10\nCOUNT\t20\nCOUNT\t30\n',
+        'test --count')
