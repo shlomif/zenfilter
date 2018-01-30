@@ -20,19 +20,24 @@ def getArgs():
 def zenfilter():
     args = getArgs()
     lastlines = []
+    last = args.last
+    count_step = args.count_step
+    filt = None
+    if args.filter:
+        filt = re.compile(args.filter)
     for index, line in enumerate(sys.stdin):
-        if args.last:
+        if last:
             # Append a line to the last lines queue
             lastlines.append(line)
-            if len(lastlines) > args.last:
+            if len(lastlines) > last:
                 # Overflow reached. Remove the first line in the queue.
                 lastlines.pop(0)
 
-        if args.count_step and index % args.count_step == 0:
+        if count_step and index % count_step == 0:
             # Line counter
             print("COUNT\t{}".format(index))
 
-        if args.filter and re.search('(%s)' % args.filter, line):
+        if filt and re.search(filt, line):
             # Regex match. Print the line with the "FOUND" prefix.
             print("FOUND\t{}".format(line), end="")
 
