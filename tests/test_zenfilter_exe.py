@@ -36,3 +36,10 @@ def test_modint():
         b''.join(bytes(str(i+1) + '\n', 'utf-8') for i in range(35)),
         b'COUNT\t0\nCOUNT\t10\nCOUNT\t20\nCOUNT\t30\n',
         'test --count')
+    _test_input_output(
+        ['--last', '1', '--filter', 'my.*pat', '--count', '3'],
+        b'1 my pattern\n2 my please\n3 my patently obvious\n' +
+        b'4 foo\n5 spam\n6 pink\n',
+        b'COUNT\t0\nFOUND\t1 my pattern\n' +
+        b'FOUND\t3 my patently obvious\nCOUNT\t3\nLAST\t6 pink\n',
+        'test --filter')
