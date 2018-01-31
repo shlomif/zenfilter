@@ -11,6 +11,7 @@ All arguments are optional:
 * `--count-step=n`: displays `COUNT <tab> <step>` every n lines.
 * `--last=n`: displays the last n lines prefixed with "LAST\t"
 * `--filter=<regex pattern>`: displays matching lines with a "FOUND\t" prefix.
+* `--suppress-last-on=<regex>`: suppress the last lines if their concatenated output matches the regex.
 
 Examples:
 
