@@ -14,6 +14,7 @@ def getArgs():
     parser.add_argument("--count-step", type=int)
     parser.add_argument("--last", type=int)
     parser.add_argument("--filter")
+    parser.add_argument("--suppress-last-on")
     return parser.parse_args()
 
 
@@ -22,6 +23,7 @@ def zenfilter():
     lastlines = []
     last = args.last
     count_step = args.count_step
+    suppress = args.suppress_last_on
     filt = None
     if args.filter:
         filt = re.compile(args.filter)
@@ -42,8 +44,9 @@ def zenfilter():
             print("FOUND\t{}".format(line), end="")
 
     # Now we print the last lines queue
-    for line in lastlines:
-        print("LAST\t{}".format(line), end="")
+    if ((not suppress) or (not re.search(suppress, ''.join(lastlines)))):
+        for line in lastlines:
+            print("LAST\t{}".format(line), end="")
 
 
 if __name__ == "__main__":

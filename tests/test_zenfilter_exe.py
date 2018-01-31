@@ -43,3 +43,10 @@ def test_modint():
         b'COUNT\t0\nFOUND\t1 my pattern\n' +
         b'FOUND\t3 my patently obvious\nCOUNT\t3\nLAST\t6 pink\n',
         'test --filter')
+    _test_input_output(
+        ['--count', '10', '--last', '10', '--suppress-last-on',
+         "All tests successful\\n*\\z"],
+        (b''.join(bytes(str(i+1) + '\n', 'utf-8') for i in range(35)) +
+         b'All tests successful\n'),
+        b'COUNT\t0\nCOUNT\t10\nCOUNT\t20\nCOUNT\t30\n',
+        'test --suppress-last-on')
