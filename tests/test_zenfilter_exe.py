@@ -45,7 +45,7 @@ def test_modint():
         'test --filter')
     _test_input_output(
         ['--count', '10', '--last', '10', '--suppress-last-on',
-         "All tests successful\\n*\\z"],
+         "All tests successful\\n*\\Z"],
         (b''.join(bytes(str(i+1) + '\n', 'utf-8') for i in range(35)) +
          b'All tests successful\n'),
         b'COUNT\t0\nCOUNT\t10\nCOUNT\t20\nCOUNT\t30\n',
