@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
         name='zenfilter',
-        version='0.2.0',
+        version='0.4.0',
         description='Filters TravisCI output',
         author='Shlomi Fish',
         author_email='shlomif@shlomifish.org',
