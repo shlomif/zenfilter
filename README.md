@@ -16,7 +16,7 @@ All arguments are optional:
 Examples:
 
 ```sh
-python zenfilter.py --count-step=10 --last=200 --filter="\d+"
+python zenfilter.py --count-step=10 --last=200 --filter="[0-9]+"
 python zenfilter.py --last=20
 python zenfilter.py --last=25 --count-step=15
 ```
