@@ -2,15 +2,16 @@
 # -*- coding: utf-8 -*-
 
 """
-test_modint
+test_zenfilter
 ----------------------------------
 
-Tests for `modint` module.
+Tests for `zenfilter` module.
 """
 
-import pytest
 import subprocess
 import sys
+
+import pytest  # noqa: F401
 
 
 def _test_input_output(args, input_, expected_output, desc):
@@ -22,7 +23,7 @@ def _test_input_output(args, input_, expected_output, desc):
     assert got_output == expected_output
 
 
-def test_modint():
+def test_zenfilter():
     _test_input_output(
         ['--last', '2'], b'1\n2\n3\n4\n', b'LAST\t3\nLAST\t4\n', 'test --last')
     _test_input_output(
