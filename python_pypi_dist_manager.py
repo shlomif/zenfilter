@@ -13,14 +13,14 @@ from pydistman import DistManager
 
 class Derived(DistManager):
     def _build_only_command_custom_steps(self):
-        self._dest_append("zenfilter/zenfilter", make_exe=True)
+        self._dest_append("zenfilter/zenfilter.py", make_exe=True)
         for fn in ["{dest_dir}/setup.py", ]:
             self._re_mutate(
                 fn_proto=fn,
                 pattern="include_package_data=True,",
                 repl_fn_proto=None,
                 prefix="include_package_data=True,\n    " +
-                "\n    scripts=['zenfilter/zenfilter'],",
+                "\n    scripts=['zenfilter/zenfilter.py'],",
                 )
         self._dest_append("MANIFEST.in")
 

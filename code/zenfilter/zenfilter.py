@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # * Write "zenfilter" (working title) for:
 # - Displaying a "COUNT\t\d+" message every --count-step=\d+ lines.
 # - Displaying the last --last=\d+ lines as "LAST\t.*"
