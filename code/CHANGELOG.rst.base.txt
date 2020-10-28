@@ -1,2 +1,5 @@
+0.6.1
+    Reenable the tests and fix the script's shebang.
+
 0.6.0
     Converted to pydistman

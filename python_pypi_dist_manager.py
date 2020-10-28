@@ -34,10 +34,10 @@ dist_name = "zenfilter"
 
 obj = Derived(
     dist_name=dist_name,
-    dist_version="0.6.0",
+    dist_version="0.6.1",
     project_name="zenfilter",
     project_short_description="Filter stdin to avoid excessive output",
-    release_date="2020-10-28",
+    release_date="2020-10-29",
     project_year="2016",
     aur_email="shlomif@cpan.org",
     project_email="shlomif@cpan.org",
