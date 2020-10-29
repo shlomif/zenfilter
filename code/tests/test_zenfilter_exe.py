@@ -16,7 +16,7 @@ import pytest  # noqa: F401
 
 def _test_input_output(args, input_, expected_output, desc):
     proc = subprocess.Popen(
-        [sys.executable, 'zenfilter/zenfilter.py'] + args,
+        [sys.executable, 'zenfilter/__init__.py'] + args,
         stdout=subprocess.PIPE, stdin=subprocess.PIPE)
     got_output = proc.communicate(input=input_)[0]
     print(desc)

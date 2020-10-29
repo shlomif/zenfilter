@@ -1,3 +1,6 @@
+0.6.3
+    Fix the script by using zenfilter/__init__.py
+
 0.6.2
     Rename the script from "zenfilter.py" to simply "zenfilter"
         - Thanks to https://stackoverflow.com/questions/45114076/python-setuptools-using-scripts-keyword-in-setup-py
