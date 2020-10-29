@@ -1,17 +1,16 @@
-# Config file for automatic testing at travis-ci.org
-# This file will be regenerated if you run travis_pypi_setup.py
-
+install:
+- pip install -U pip
+- pip install cookiecutter
+- pip --version
+- ( cd . && python3 python_pypi_dist_manager.py build_only )
+- ( cd . && cat dest/requirements.txt )
+- ( cd . && cd dest && pip install -r requirements.txt && pip install . )
 language: python
 python:
-    - "3.5"
-    - "3.6"
-    - "3.8"
-
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install:
-    - true
-    - pip install -r requirements_dev.txt
-
-# command to run tests, e.g. python setup.py test
+- '3.5'
+- '3.6'
+- '3.7'
+- '3.8'
+- pypy3
 script:
-    - pytest
+- ( cd . && cd dest && py.test --cov zenfilter --cov-report term-missing tests/ )
