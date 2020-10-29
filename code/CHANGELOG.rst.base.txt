@@ -1,5 +1,13 @@
+0.6.2
+    Rename the script from "zenfilter.py" to simply "zenfilter"
+        - Thanks to https://stackoverflow.com/questions/45114076/python-setuptools-using-scripts-keyword-in-setup-py
+
 0.6.1
     Reenable the tests and fix the script's shebang.
 
 0.6.0
     Converted to pydistman
+
+0.4.0
+    Earlier versions based on the work of https://github.com/SpiritualForest/
+    Thanks!

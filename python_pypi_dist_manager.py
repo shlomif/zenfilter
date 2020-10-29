@@ -35,7 +35,7 @@ dist_name = "zenfilter"
 
 obj = Derived(
     dist_name=dist_name,
-    dist_version="0.6.1",
+    dist_version="0.6.2",
     project_name="zenfilter",
     project_short_description="Filter stdin to avoid excessive output",
     release_date="2020-10-29",
