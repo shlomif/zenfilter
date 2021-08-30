@@ -5,9 +5,9 @@
 # - Displaying lines matching --filter=.* (regex) as "FOUND\t.*"
 # "make | python zenfilter.py [args]"
 
-import sys
 import argparse
 import re
+import sys
 
 
 def getArgs():
@@ -38,11 +38,11 @@ def zenfilter():
 
         if count_step and index % count_step == 0:
             # Line counter
-            print("COUNT\t{}".format(index))
+            print("COUNT\t{}".format(index), flush=True)
 
         if filt and re.search(filt, line):
             # Regex match. Print the line with the "FOUND" prefix.
-            print("FOUND\t{}".format(line), end="")
+            print("FOUND\t{}".format(line), end="", flush=True)
 
     # Now we print the last lines queue
     if ((not suppress) or (not re.search(suppress, ''.join(lastlines)))):
