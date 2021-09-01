@@ -48,6 +48,7 @@ def zenfilter():
     if ((not suppress) or (not re.search(suppress, ''.join(lastlines)))):
         for line in lastlines:
             print("LAST\t{}".format(line), end="")
+    sys.stdout.flush()
 
 
 if __name__ == "__main__":
