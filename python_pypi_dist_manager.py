@@ -6,8 +6,6 @@
 #
 # Distributed under the terms of the MIT license.
 
-import sys
-
 from pydistman import DistManager
 
 
@@ -26,11 +24,6 @@ class Derived(DistManager):
         self._dest_append("MANIFEST.in")
 
 
-try:
-    cmd = sys.argv.pop(1)
-except IndexError:
-    cmd = 'build'
-
 dist_name = "zenfilter"
 
 obj = Derived(
@@ -45,4 +38,4 @@ obj = Derived(
     full_name="Shlomi Fish",
     github_username="shlomif",
 )
-obj.run_command(cmd=cmd, args=[])
+obj.cli_run()
